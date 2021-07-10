@@ -27,6 +27,9 @@ p {
 body {
     font-family: 'Open Sans', sans-serif;
 }
+body.hidden {
+    overflow: hidden;
+}
 
 body::-webkit-scrollbar {
     background-color: #fff;
