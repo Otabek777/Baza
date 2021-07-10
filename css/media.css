@@ -18,8 +18,8 @@
     }
 }
 @media screen and (max-width: 1000px) {
-    section {
-        /* display: none; */
+    .section_text__box .img {
+        min-width: 100%;
     }
     .section_text__box {
         flex-direction: column;
@@ -69,10 +69,21 @@
     .header__box .container {
         padding: 0 16px;
     }
-    .header__navbar {
-        position: fixed;
-        top: 0;
-        left: -1000px;
+    .navbar__block {
+        width: 100%;
+        display: none;
+        position: absolute;
+        top: 130px;
+        left: 0px;
+        background-color: #fff;
+        padding: 16px;
+        border-top: 1px solid #fafafa;
+    }
+    .header__navbar li a {
+        font-size: 14px;
+    }
+    .navbar__block.active {
+        display: block;
     }
     .project__item {
         width: 100%;
@@ -152,6 +163,17 @@
 }
 
 @media screen and (max-width: 700px) {
+    .header {
+        height: 89px;
+    }
+    .header__nav {
+        width: 100%;
+        position: fixed;
+        top: 0;
+        left: 0;
+        background-color: #fff;
+        box-shadow: 0px 4px 10px rgb(0 0 0 / 25%);
+    }
     .crumbs a, .crumbs p {
         font-size: 10px;
         line-height: 12px;
@@ -167,8 +189,41 @@
         line-height: 28px !important;
         text-align: center;
     }
-    .header {
-        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
+    .navbar__block {
+        display: none;
+        width: 100%;
+        height: calc(100vh - 89px);
+        position: fixed;
+        top: 89px;
+        left: 0;
+        background-color: #fff;
+        border-top: 1px solid #fafafa;
+        overflow-y: auto
+    }
+    .navbar__block.active {
+        display: block;
+    }
+    .header__navbar {
+        flex-wrap: wrap;
+        align-items: flex-start;
+        justify-content: flex-start;
+    }
+    .header__navbar li {
+        width: 100%;
+        margin-top: 42px;
+    }
+    .header__navbar li a {
+        width: 100%;
+        margin-right: 0;
+        display: block;
+    }
+    .header__navbar .btn {
+        order: -1;
+        margin-left: auto;
+    }
+    .header__navbar .map {
+        order: -2;
+        margin-right: 0;
     }
     .review__block {
         padding: 16px;
