@@ -73,8 +73,13 @@
                                     <a href="#">Интересы</a>
                                 </div>
                             </button>
-                            
                         </ul>
+                        <div class="mobile-call">
+                            <a href="tel:+7 (383) 000-22-01">+7 (383) 000-22-01</a>
+                            <button>
+                                <a href="#">забронитровать</a>
+                            </button>
+                        </div>
                     </div>
                     <div class="header__burgir">
                         <span></span>
@@ -144,8 +149,43 @@
                         </div>
                     </div>
                     <div class="date__input">
-                        <div class="input_back">
+                        <div class="input_back" id="add-person-btn">
                             <input type="text" placeholder="2 взрослых, 2 детей">
+                            <div class="add-person">
+                                <div class="person">
+                                    <div class="left">
+                                        <p>Взрослые</p>
+                                        <span>От 13 лет</span>
+                                    </div>
+                                    <div class="right">
+                                        <button>-</button>
+                                        <input type="text" value="0">
+                                        <button>+</button>
+                                    </div>
+                                </div>
+                                <div class="person">
+                                    <div class="left">
+                                        <p>Дети</p>
+                                        <span>2 - 12 лет</span>
+                                    </div>
+                                    <div class="right">
+                                        <button>-</button>
+                                        <input type="text" value="0">
+                                        <button>+</button>
+                                    </div>
+                                </div>
+                                <div class="person">
+                                    <div class="left">
+                                        <p>Младенци</p>
+                                        <span>Младше 2 лет</span>
+                                    </div>
+                                    <div class="right">
+                                        <button>-</button>
+                                        <input type="text" value="0">
+                                        <button>+</button>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <div class="date__btn">
@@ -184,7 +224,7 @@
                     <div class="advantage__block">
                         <img src="img/icon3.svg" alt="">
                         <h5>Бесплатный Wi-Fi</h5>
-                        <p>В каждом коттедже, есть доступ к бесплатному Wi-Fi</p>
+                        <p>В каждом коттедже есть доступ к бесплатному Wi-Fi</p>
                     </div>
                 </div>
             </div>
@@ -266,7 +306,10 @@
         </section>
         <section class="news">
             <div class="container">
-                <h2>Новости</h2>
+                <div class="news__title">
+                    <h2>Новости</h2>
+                    <a href="#">Все новости</a>
+                </div>
                 <div class="news__box">
                     <a href="#" class="news__item">
                         <div class="img">
@@ -369,6 +412,15 @@
             autoplay: true,
             autoplaySpeed: 4000,
             dots: false
+        });
+        
+        document.querySelector('body').addEventListener('click', function() {
+            document.querySelector('#add-person-btn').classList.remove('active')
+        });
+        document.querySelector('#add-person-btn').addEventListener('click', function() {
+            setTimeout(function() {
+                document.querySelector('#add-person-btn').classList.add('active');
+            }, 0001);
         });
     </script>
 </body>
