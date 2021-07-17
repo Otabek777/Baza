@@ -115,8 +115,43 @@
                         </div>
                     </div>
                     <div class="date__input">
-                        <div class="input_back">
+                        <div class="input_back" id="add-person-btn">
                             <input type="text" placeholder="2 взрослых, 2 детей">
+                            <div class="add-person">
+                                <div class="person">
+                                    <div class="left">
+                                        <p>Взрослые</p>
+                                        <span>От 13 лет</span>
+                                    </div>
+                                    <div class="right">
+                                        <button>-</button>
+                                        <input type="text" value="0">
+                                        <button>+</button>
+                                    </div>
+                                </div>
+                                <div class="person">
+                                    <div class="left">
+                                        <p>Дети</p>
+                                        <span>2 - 12 лет</span>
+                                    </div>
+                                    <div class="right">
+                                        <button>-</button>
+                                        <input type="text" value="0">
+                                        <button>+</button>
+                                    </div>
+                                </div>
+                                <div class="person">
+                                    <div class="left">
+                                        <p>Младенцы</p>
+                                        <span>Младше 2 лет</span>
+                                    </div>
+                                    <div class="right">
+                                        <button>-</button>
+                                        <input type="text" value="0">
+                                        <button>+</button>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <div class="date__btn">
@@ -398,6 +433,14 @@
     <script src="js/main.js"></script>
     <script src="js/SmoothScroll.js"></script>
     <script>
+        document.querySelector('body').addEventListener('click', function() {
+            document.querySelector('#add-person-btn').classList.remove('active')
+        });
+        document.querySelector('#add-person-btn').addEventListener('click', function() {
+            setTimeout(function() {
+                document.querySelector('#add-person-btn').classList.add('active');
+            }, 0001);
+        });
     </script>
 </body>
 </html>

@@ -107,6 +107,7 @@
         flex-direction: column;
     }
     .form__box h2 {
+        min-width: 100%;
         width: 100%;
         margin-bottom: 24px;
     }
@@ -163,8 +164,30 @@
 }
 
 @media screen and (max-width: 700px) {
+    .date {
+        position: relative;
+        z-index: 99;
+    }
+    .input_back .add-person {
+        display: block;
+        max-height: 0;
+        overflow: hidden;
+        width: 100%;
+        position: relative;
+        top: 0;
+        border-radius: 0 0 4px 4px;
+        padding: 0 16px;
+        transition: all.3s ease;
+        box-shadow: none;
+    }
+    .input_back.active .add-person {
+        padding: 16px;
+        max-height: 1000px;
+        border-top: 1px solid #BFBFBF;
+    }
     .project, .news, .review, .home.gallery {
         padding-top: 40px;
+        padding-bottom: 40px;
     }
     .home__item .img {
         height: 200px;
@@ -184,11 +207,11 @@
         display: block;
     }
     .banner {
-        min-height: 450px;
-        height: 450px;
+        min-height: 380px;
+        height: 380px;
     }
     .banner__slider, .banner .slick-list, .banner .slick-track, .banner .banner__block {
-        height: 450px;
+        height: 380px;
     }
     .header {
         height: 89px;
@@ -258,6 +281,7 @@
         display: block;
         font-weight: bold;
         color: #054C33;
+        padding-bottom: 5px;
     }
     .mobile-call button {
         width: 200px;
